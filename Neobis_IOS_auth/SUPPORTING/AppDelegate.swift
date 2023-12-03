@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Neobis_IOS_auth
 //
-//  Created by Burte Bayaraa on 2023.12.03.
+//  Created by Burte Bayaraa on 2023.11.30
 //
 
 import UIKit
