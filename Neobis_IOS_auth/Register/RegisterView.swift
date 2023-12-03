@@ -40,7 +40,43 @@ class RegisterView: UIView {
         return textfield
     }()
     
-    lazy var checkPasswordTextField: CustomTextField = {
+    lazy var firstPasswordRequirement: UILabel = {
+        let label = UILabel()
+        label.text = " · От 8 до 15 символов"
+        label.font = UIFont(name: "MPLUS1p-Medium", size: 12)
+        label.textColor = .systemGray
+        
+        return label
+    }()
+    
+    lazy var secondPasswordRequirement: UILabel = {
+        let label = UILabel()
+        label.text = " · Строчные и прописные буквы"
+        label.font = UIFont(name: "MPLUS1p-Medium", size: 12)
+        label.textColor = .systemGray
+        
+        return label
+    }()
+    
+    lazy var thirdPasswordRequirement: UILabel = {
+        let label = UILabel()
+        label.text = " · Минимум 1 цифра"
+        label.font = UIFont(name: "MPLUS1p-Medium", size: 12)
+        label.textColor = .systemGray
+        
+        return label
+    }()
+    
+    lazy var fourthPasswordRequirement: UILabel = {
+        let label = UILabel()
+        label.text = " · Минимум 1 спецсимвол (!, \", #, $...)"
+        label.font = UIFont(name: "MPLUS1p-Medium", size: 12)
+        label.textColor = .systemGray
+        
+        return label
+    }()
+    
+    lazy var confirmPasswordTextField: CustomTextField = {
         let textfield = CustomTextField()
         textfield.placeholder = "Повтори пароль"
         
@@ -54,6 +90,7 @@ class RegisterView: UIView {
         button.layer.cornerRadius = 16
         button.backgroundColor = .black
         button.titleLabel?.font = UIFont(name: "MPLUS1p-Bold", size: 16)
+        
         return button
     }()
     
@@ -69,7 +106,11 @@ class RegisterView: UIView {
         addSubview(emailTextField)
         addSubview(usernameTextField)
         addSubview(createPasswordTextField)
-        addSubview(checkPasswordTextField)
+        addSubview(firstPasswordRequirement)
+        addSubview(secondPasswordRequirement)
+        addSubview(thirdPasswordRequirement)
+        addSubview(fourthPasswordRequirement)
+        addSubview(confirmPasswordTextField)
         addSubview(nextButton)
     }
     
@@ -102,15 +143,39 @@ class RegisterView: UIView {
             make.height.equalTo(52)
         }
         
-        checkPasswordTextField.snp.makeConstraints(){ make in
+        firstPasswordRequirement.snp.makeConstraints(){ make in
             make.top.equalTo(createPasswordTextField.snp.bottom).offset(14)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+        }
+        
+        secondPasswordRequirement.snp.makeConstraints(){ make in
+            make.top.equalTo(firstPasswordRequirement.snp.bottom).offset(14)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+        }
+        
+        thirdPasswordRequirement.snp.makeConstraints(){ make in
+            make.top.equalTo(secondPasswordRequirement.snp.bottom).offset(14)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+        }
+        
+        fourthPasswordRequirement.snp.makeConstraints(){ make in
+            make.top.equalTo(thirdPasswordRequirement.snp.bottom).offset(14)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+        }
+        
+        confirmPasswordTextField.snp.makeConstraints(){ make in
+            make.top.equalTo(fourthPasswordRequirement.snp.bottom).offset(14)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().inset(16)
             make.height.equalTo(52)
         }
         
         nextButton.snp.makeConstraints(){ make in
-            make.top.equalTo(checkPasswordTextField.snp.bottom).offset(24)
+            make.top.equalTo(confirmPasswordTextField.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
