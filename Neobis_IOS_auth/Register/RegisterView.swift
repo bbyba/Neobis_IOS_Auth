@@ -33,12 +33,13 @@ class RegisterView: UIView {
         return textfield
     }()
     
-    lazy var createPasswordTextField: CustomTextField = {
-        let textfield = CustomTextField()
+    lazy var createPasswordTextField: PasswordTextField = {
+        let textfield = PasswordTextField()
         textfield.placeholder = "Создай пароль"
         
         return textfield
     }()
+    
     
     lazy var firstPasswordRequirement: UILabel = {
         let label = UILabel()
@@ -76,8 +77,8 @@ class RegisterView: UIView {
         return label
     }()
     
-    lazy var confirmPasswordTextField: CustomTextField = {
-        let textfield = CustomTextField()
+    lazy var confirmPasswordTextField: PasswordTextField = {
+        let textfield = PasswordTextField()
         textfield.placeholder = "Повтори пароль"
         
         return textfield

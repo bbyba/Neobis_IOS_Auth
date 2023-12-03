@@ -6,8 +6,6 @@
 import UIKit
 
 class CustomTextField: UITextField {
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupTextField()
@@ -22,7 +20,7 @@ class CustomTextField: UITextField {
         self.borderStyle = .roundedRect
         self.autocapitalizationType = .none
         self.autocorrectionType = .no
-        self.clearButtonMode = .whileEditing
+//        self.clearButtonMode = .whileEditing
         self.backgroundColor = UIColor(red:248/255, green: 248/255, blue: 248/255, alpha: 1)
         self.textColor = .black
         if let font = UIFont(name: "MPLUS1p-Medium", size: 16) {
