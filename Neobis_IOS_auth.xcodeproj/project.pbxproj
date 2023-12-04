@@ -27,6 +27,7 @@
 		DDDCEFDA2B1C7300007CD8C9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFD92B1C7300007CD8C9 /* RegisterViewController.swift */; };
 		DDDCEFDD2B1CE43B007CD8C9 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFDC2B1CE43B007CD8C9 /* PasswordTextField.swift */; };
 		DDDCEFDF2B1CE9C9007CD8C9 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFDE2B1CE9C9007CD8C9 /* SplashScreenView.swift */; };
+		DDDCEFE12B1D874F007CD8C9 /* SecondSplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFE02B1D874F007CD8C9 /* SecondSplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		DDDCEFD92B1C7300007CD8C9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DDDCEFDC2B1CE43B007CD8C9 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		DDDCEFDE2B1CE9C9007CD8C9 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		DDDCEFE02B1D874F007CD8C9 /* SecondSplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				DDDCEFC22B1C5207007CD8C9 /* CustomTextField.swift */,
 				DDDCEFBE2B1BD687007CD8C9 /* CustomButton.swift */,
 				DDDCEFDC2B1CE43B007CD8C9 /* PasswordTextField.swift */,
+				DDDCEFE02B1D874F007CD8C9 /* SecondSplashScreenView.swift */,
 			);
 			path = CustomStuff;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				DDDCEFDD2B1CE43B007CD8C9 /* PasswordTextField.swift in Sources */,
 				DDDCEFC32B1C5207007CD8C9 /* CustomTextField.swift in Sources */,
 				DDDCEFDA2B1C7300007CD8C9 /* RegisterViewController.swift in Sources */,
+				DDDCEFE12B1D874F007CD8C9 /* SecondSplashScreenView.swift in Sources */,
 				DDDCEFD82B1C72E6007CD8C9 /* RegisterView.swift in Sources */,
 				DDDCEFAE2B1BD224007CD8C9 /* ViewController.swift in Sources */,
 				DDDCEFDF2B1CE9C9007CD8C9 /* SplashScreenView.swift in Sources */,
