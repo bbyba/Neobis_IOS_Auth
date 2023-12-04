@@ -5,7 +5,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UIGestureRecognizerDelegate {
 //    lazy var bothLetterKindsExists = true
 //    lazy var numberExists = true
 //    lazy var specialCharacterExists = true
@@ -31,10 +31,21 @@ class RegisterViewController: UIViewController {
     func configureNav(){
         navigationItem.title = "Регистрация"
         navigationController?.navigationBar.tintColor = .black
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "back"),
+            style: .plain,
+            target: self,
+            action: #selector(popToPrevious)
+        )
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     func addTargets(){
         registerView.createPasswordTextField.addTarget(self, action: #selector(createPasswordChanged), for: .editingChanged)
+    }
+    
+    @objc func popToPrevious(){
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func createPasswordChanged() {

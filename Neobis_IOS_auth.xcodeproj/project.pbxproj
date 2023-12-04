@@ -109,11 +109,11 @@
 				DDDCEFDB2B1C786A007CD8C9 /* CustomStuff */,
 				DDDCEFD62B1C72CD007CD8C9 /* Register */,
 				DDDCEFD52B1C72AA007CD8C9 /* Login */,
-				DDDCEFB72B1BD227007CD8C9 /* Info.plist */,
+				DDDCEFDE2B1CE9C9007CD8C9 /* SplashScreenView.swift */,
 				DDDCEFB22B1BD227007CD8C9 /* Assets.xcassets */,
+				DDDCEFB72B1BD227007CD8C9 /* Info.plist */,
 				DDDCEFC42B1C556B007CD8C9 /* Fonts */,
 				DDDCEFBD2B1BD533007CD8C9 /* SUPPORTING */,
-				DDDCEFDE2B1CE9C9007CD8C9 /* SplashScreenView.swift */,
 			);
 			path = Neobis_IOS_auth;
 			sourceTree = "<group>";

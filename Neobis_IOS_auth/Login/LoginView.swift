@@ -37,7 +37,7 @@ class LoginView: UIView {
     
     lazy var passwordTextField: PasswordTextField = {
         let textfield = PasswordTextField()
-        textfield.placeholder = "Введи Пароль"
+        textfield.placeholder = "Введи пароль"
         
         return textfield
     }()
