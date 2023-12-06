@@ -30,21 +30,21 @@ class LoginView: UIView {
     
     lazy var usernameTextField: CustomTextField = {
         let textfield = CustomTextField()
-        textfield.placeholder = "Введи логин"
+        textfield.placeholder = "Username"
         
         return textfield
     }()
     
     lazy var passwordTextField: PasswordTextField = {
         let textfield = PasswordTextField()
-        textfield.placeholder = "Введи пароль"
+        textfield.placeholder = "Password"
         
         return textfield
     }()
     
     lazy var enterButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Войти", for: .normal)
+        button.setTitle("Login", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 16
         button.backgroundColor = .black
@@ -54,7 +54,7 @@ class LoginView: UIView {
     
     lazy var registerButton: UIButton = {
         let button = UIButton()
-        button.setTitle("У меня еще нет аккаунта", for: .normal)
+        button.setTitle("I don't have an account", for: .normal)
         button.titleLabel?.font = UIFont(name: "MPLUS1p-Medium", size: 16)
         button.setTitleColor(.black, for: .normal)
         button.isUserInteractionEnabled = true

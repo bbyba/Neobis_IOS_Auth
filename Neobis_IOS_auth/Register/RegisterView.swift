@@ -9,7 +9,7 @@ class RegisterView: UIView {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Создать аккаунт \n Lorby"
+        label.text = "Create an account \n Lorby"
         label.font = UIFont(name: "MPLUS1p-Medium", size: 24)
         label.textColor = .black
         label.textAlignment = .center
@@ -21,21 +21,21 @@ class RegisterView: UIView {
     
     lazy var emailTextField: CustomTextField = {
         let textfield = CustomTextField()
-        textfield.placeholder = "Введи адрес почты"
+        textfield.placeholder = "Email address"
         
         return textfield
     }()
     
     lazy var usernameTextField: CustomTextField = {
         let textfield = CustomTextField()
-        textfield.placeholder = "Придумай логин"
+        textfield.placeholder = "New Username"
         
         return textfield
     }()
     
     lazy var createPasswordTextField: PasswordTextField = {
         let textfield = PasswordTextField()
-        textfield.placeholder = "Создай пароль"
+        textfield.placeholder = "Create a new password"
         
         return textfield
     }()
@@ -43,7 +43,7 @@ class RegisterView: UIView {
     
     lazy var firstPasswordRequirement: UILabel = {
         let label = UILabel()
-        label.text = " · От 8 до 15 символов"
+        label.text = " · 8-15 characters "
         label.font = UIFont(name: "MPLUS1p-Medium", size: 12)
         label.textColor = .systemGray
         
@@ -52,7 +52,7 @@ class RegisterView: UIView {
     
     lazy var secondPasswordRequirement: UILabel = {
         let label = UILabel()
-        label.text = " · Строчные и прописные буквы"
+        label.text = " · Capital and lowercase letters "
         label.font = UIFont(name: "MPLUS1p-Medium", size: 12)
         label.textColor = .systemGray
         
@@ -61,7 +61,7 @@ class RegisterView: UIView {
     
     lazy var thirdPasswordRequirement: UILabel = {
         let label = UILabel()
-        label.text = " · Минимум 1 цифра"
+        label.text = " · Min. 1 number "
         label.font = UIFont(name: "MPLUS1p-Medium", size: 12)
         label.textColor = .systemGray
         
@@ -70,7 +70,7 @@ class RegisterView: UIView {
     
     lazy var fourthPasswordRequirement: UILabel = {
         let label = UILabel()
-        label.text = " · Минимум 1 спецсимвол (!, \", #, $...)"
+        label.text =  " · Min. 1 special character "
         label.font = UIFont(name: "MPLUS1p-Medium", size: 12)
         label.textColor = .systemGray
         
@@ -79,20 +79,32 @@ class RegisterView: UIView {
     
     lazy var confirmPasswordTextField: PasswordTextField = {
         let textfield = PasswordTextField()
-        textfield.placeholder = "Повтори пароль"
+        textfield.placeholder = "Confirm Password"
         
         return textfield
     }()
     
     lazy var nextButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Далее", for: .normal)
+        button.setTitle("Next", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.systemRed, for: .disabled)
         button.layer.cornerRadius = 16
         button.backgroundColor = .black
         button.titleLabel?.font = UIFont(name: "MPLUS1p-Bold", size: 16)
+        button.isEnabled = false
         
         return button
+    }()
+    
+    lazy var mismatchPasswordLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Passwords do not match"
+        label.font = UIFont(name: "MPLUS1p-Medium", size: 12)
+        label.textColor = .systemRed
+        label.isHidden = true
+        
+        return label
     }()
     
     
@@ -113,6 +125,7 @@ class RegisterView: UIView {
         addSubview(fourthPasswordRequirement)
         addSubview(confirmPasswordTextField)
         addSubview(nextButton)
+        addSubview(mismatchPasswordLabel)
     }
     
     func setupConstraints(){
@@ -176,10 +189,17 @@ class RegisterView: UIView {
         }
         
         nextButton.snp.makeConstraints(){ make in
-            make.top.equalTo(confirmPasswordTextField.snp.bottom).offset(24)
+            make.top.equalTo(confirmPasswordTextField.snp.bottom).offset(35)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
+        }
+        
+        mismatchPasswordLabel.snp.makeConstraints() { make in
+            make.top.equalTo(confirmPasswordTextField.snp.bottom).offset(7)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(15)
         }
         
     }

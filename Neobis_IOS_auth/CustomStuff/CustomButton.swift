@@ -2,8 +2,6 @@
 //  CustomButton.swift
 //  Neobis_IOS_auth
 //
-//  Created by Burte Bayaraa on 2023.11.30.
-//
 
 import UIKit
 

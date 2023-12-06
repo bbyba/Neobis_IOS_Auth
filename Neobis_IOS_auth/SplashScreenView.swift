@@ -23,7 +23,7 @@ class SplashScreenView: UIView {
     
     lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Твой личный репетитор"
+        label.text = "Personal tutor"
         label.font = UIFont(name: "MPLUS1p-Regular", size: 20)
         label.textAlignment = .center
         

@@ -16,7 +16,7 @@ class SecondSplashScreenView: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "С возвращением!"
+        label.text = "Welcome Back!"
         label.font = UIFont(name: "MPLUS1p-Medium", size: 40)
         label.textAlignment = .center
         
@@ -25,7 +25,7 @@ class SecondSplashScreenView: UIView {
     
     lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Lorby - Твой личный репетитор"
+        label.text = "Lorby - your personal tutor"
         label.font = UIFont(name: "MPLUS1p-Regular", size: 20)
         label.textAlignment = .center
         
@@ -41,7 +41,7 @@ class SecondSplashScreenView: UIView {
     
     lazy var logoutButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Выйти", for: .normal)
+        button.setTitle("Logout", for: .normal)
         button.titleLabel?.font = UIFont(name: "MPLUS1p-Medium", size: 16)
         button.setTitleColor(.black, for: .normal)
         button.isUserInteractionEnabled = true

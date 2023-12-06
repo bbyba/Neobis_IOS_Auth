@@ -6,13 +6,9 @@
 import UIKit
 
 class RegisterViewController: UIViewController, UIGestureRecognizerDelegate {
-//    lazy var bothLetterKindsExists = true
-//    lazy var numberExists = true
-//    lazy var specialCharacterExists = true
-//    lazy var hasValidLength = true
     
     lazy var registerView = RegisterView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -29,7 +25,7 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func configureNav(){
-        navigationItem.title = "Регистрация"
+        navigationItem.title = "Registration"
         navigationController?.navigationBar.tintColor = .black
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage(named: "back"),
@@ -41,30 +37,41 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func addTargets(){
-        registerView.createPasswordTextField.addTarget(self, action: #selector(createPasswordChanged), for: .editingChanged)
+        registerView.createPasswordTextField.addTarget(self, action: #selector(createPassword), for: .editingChanged)
+        registerView.confirmPasswordTextField.addTarget(self, action: #selector(confirmPassword), for: .editingChanged)
+        registerView.nextButton.addTarget(self, action: #selector(didTapNextButton), for: .touchUpInside)
     }
-    
+
     @objc func popToPrevious(){
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func createPasswordChanged() {
-            if let password = registerView.createPasswordTextField.text {
-                isValidPassword(password)
-            }
+    // MARK: - Check password regex
+    
+//    @objc func createPasswordChanged() {
+//        if let password = registerView.createPasswordTextField.text {
+//            isValidPassword(password)
+//        }
+//    }
+    @objc func createPassword() {
+        if let password = registerView.createPasswordTextField.text {
+            let isValid = isValidPassword(password)
         }
-
-    func isValidPassword(_ password: String) {
+    }
+    
+    func isValidPassword(_ password: String) -> Bool {
         updateRequirementLabel(registerView.firstPasswordRequirement, hasRequirement: hasValidLength(password))
         updateRequirementLabel(registerView.secondPasswordRequirement, hasRequirement: hasLetters(password))
         updateRequirementLabel(registerView.thirdPasswordRequirement, hasRequirement: hasDigit(password))
         updateRequirementLabel(registerView.fourthPasswordRequirement, hasRequirement: hasSpecialCharacter(password))
-
+        
         let allRequirementsMet = hasLetters(password) && hasDigit(password) && hasSpecialCharacter(password) && hasValidLength(password)
-
+        
         registerView.createPasswordTextField.textColor = allRequirementsMet ? .black : .systemRed
-    }
 
+        return allRequirementsMet
+    }
+    
     func updateRequirementLabel(_ label: UILabel, hasRequirement: Bool) {
         var labelText = label.text ?? ""
         labelText = String(labelText.dropLast())
@@ -76,7 +83,7 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate {
             labelText += "❌"
             label.textColor = .systemRed
         }
-
+        
         label.text = labelText
     }
     
@@ -97,18 +104,58 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate {
         
         return lowercaseLetterPredicate.evaluate(with: password) && uppercaseLetterPredicate.evaluate(with: password)
     }
-
+    
     func hasDigit(_ password: String) -> Bool {
         let digitRegex = ".*\\d+.*"
         let digitPredicate = NSPredicate(format: "SELF MATCHES %@",digitRegex)
         
         return digitPredicate.evaluate(with: password)
     }
-
+    
     func hasSpecialCharacter(_ password: String) -> Bool {
         let specialCharacterRegex = ".*[@$!%*?&]+.*"
         let specialCharacterPredicate = NSPredicate(format: "SELF MATCHES %@", specialCharacterRegex)
         
         return specialCharacterPredicate.evaluate(with: password)
+    }
+    
+    
+    //MARK: - Confirm Password
+
+    @objc func confirmPassword() -> Bool {
+        let originalPass = registerView.createPasswordTextField.text
+        let checkPass = registerView.confirmPasswordTextField.text
+
+        if checkPass == originalPass {
+            registerView.confirmPasswordTextField.textColor = .black
+            registerView.mismatchPasswordLabel.isHidden = true
+            return true
+        } else {
+            registerView.confirmPasswordTextField.textColor = .systemRed
+            registerView.mismatchPasswordLabel.isHidden = false
+            return false
+        }
+    }
+    
+    //MARK: - Next button
+    
+    func checkRequirementsForNextButton() {
+        let email = registerView.emailTextField.text
+        let username = registerView.usernameTextField.text
+        let isValidPass = isValidPassword(registerView.createPasswordTextField.text ?? "")
+        let doPasswordsMatch = confirmPassword()
+
+        if !(email?.isEmpty ?? true) && !(username?.isEmpty ?? true) && isValidPass && doPasswordsMatch {
+            registerView.nextButton.isEnabled = true
+            registerView.nextButton.backgroundColor = .black
+        } else {
+            registerView.nextButton.isEnabled = false
+        }
+    }
+    
+    @objc func didTapNextButton(){
+            let vc = ConfirmationViewController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
     }
 }
