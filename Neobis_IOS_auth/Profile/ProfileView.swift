@@ -1,5 +1,5 @@
 //
-//  SecondSplashScreenView.swift
+//  ProfileView.swift
 //  Neobis_IOS_auth
 //
 //  Created by Burte Bayaraa on 2023.12.04.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondSplashScreenView: UIView {
+class ProfileView: UIView {
     
     lazy var titleView: UIView = {
         let view = UIView()

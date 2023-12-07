@@ -25,10 +25,19 @@ class ViewController: UIViewController {
     }
     
     func setupTargets() {
-        loginView.registerButton.addTarget(self, action: #selector(registerPressed), for: .touchUpInside)
+        loginView.loginButton.addTarget(self, action: #selector(didTapLoginButon), for: .touchUpInside)
+        loginView.registerButton.addTarget(self, action: #selector(didTapRegisterButton), for: .touchUpInside)
     }
     
-    @objc func registerPressed() {
+    @objc func didTapLoginButon(){
+        print("login button tapped")
+        let profileVC = ProfileViewController()
+        profileVC.modalPresentationStyle = .fullScreen
+        present(profileVC, animated: false, completion: nil)
+    }
+    
+    @objc func didTapRegisterButton() {
+        print("register button tapped")
         let registerVC = RegisterViewController()
         navigationController?.pushViewController(registerVC, animated: true)
     }

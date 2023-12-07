@@ -88,11 +88,11 @@ class RegisterView: UIView {
         let button = UIButton()
         button.setTitle("Next", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(.systemRed, for: .disabled)
+//        button.setTitleColor(.systemRed, for: .disabled)
         button.layer.cornerRadius = 16
         button.backgroundColor = .black
         button.titleLabel?.font = UIFont(name: "MPLUS1p-Bold", size: 16)
-        button.isEnabled = false
+//        button.isEnabled = false
         
         return button
     }()

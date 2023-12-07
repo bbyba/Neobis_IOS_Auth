@@ -42,7 +42,7 @@ class LoginView: UIView {
         return textfield
     }()
     
-    lazy var enterButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Login", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -74,7 +74,7 @@ class LoginView: UIView {
         addSubview(welcomeBackLabel)
         addSubview(usernameTextField)
         addSubview(passwordTextField)
-        addSubview(enterButton)
+        addSubview(loginButton)
         addSubview(registerButton)
     }
     
@@ -105,7 +105,7 @@ class LoginView: UIView {
             make.height.equalTo(52)
         }
         
-        enterButton.snp.makeConstraints(){ make in
+        loginButton.snp.makeConstraints(){ make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().inset(16)
@@ -113,7 +113,7 @@ class LoginView: UIView {
         }
         
         registerButton.snp.makeConstraints(){ make in
-            make.top.equalTo(enterButton.snp.bottom).offset(24)
+            make.top.equalTo(loginButton.snp.bottom).offset(24)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)

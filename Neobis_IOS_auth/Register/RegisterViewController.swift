@@ -48,14 +48,9 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Check password regex
     
-//    @objc func createPasswordChanged() {
-//        if let password = registerView.createPasswordTextField.text {
-//            isValidPassword(password)
-//        }
-//    }
     @objc func createPassword() {
         if let password = registerView.createPasswordTextField.text {
-            let isValid = isValidPassword(password)
+            isValidPassword(password)
         }
     }
     
@@ -139,23 +134,24 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //MARK: - Next button
     
-    func checkRequirementsForNextButton() {
-        let email = registerView.emailTextField.text
-        let username = registerView.usernameTextField.text
-        let isValidPass = isValidPassword(registerView.createPasswordTextField.text ?? "")
-        let doPasswordsMatch = confirmPassword()
-
-        if !(email?.isEmpty ?? true) && !(username?.isEmpty ?? true) && isValidPass && doPasswordsMatch {
-            registerView.nextButton.isEnabled = true
-            registerView.nextButton.backgroundColor = .black
-        } else {
-            registerView.nextButton.isEnabled = false
-        }
-    }
+//    func checkRequirementsForNextButton() {
+//        let email = registerView.emailTextField.text
+//        let username = registerView.usernameTextField.text
+//        let isValidPass = isValidPassword(registerView.createPasswordTextField.text ?? "")
+//        let doPasswordsMatch = confirmPassword()
+//
+//        if !(email?.isEmpty ?? true) && !(username?.isEmpty ?? true) && isValidPass && doPasswordsMatch {
+//            registerView.nextButton.isEnabled = true
+//            registerView.nextButton.backgroundColor = .black
+//        } else {
+//            registerView.nextButton.isEnabled = false
+//        }
+//    }
     
-    @objc func didTapNextButton(){
-            let vc = ConfirmationViewController()
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true)
+    @objc func didTapNextButton() {
+        print("Next button tapped")
+        let confirmationVC = ConfirmationViewController()
+        navigationController?.pushViewController(confirmationVC, animated: true)
     }
+
 }
