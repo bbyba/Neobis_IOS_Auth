@@ -15,7 +15,7 @@ class ConfirmationView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Выслали письмо со ссылкой для завершения регистрации на "
-        label.font = UIFont(name: "MPLUS1p-Medium", size: 30)
+        label.font = UIFont(name: "MPLUS1p-Medium", size: 25)
         label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -73,7 +73,7 @@ class ConfirmationView: UIView {
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(136)
             make.leading.equalToSuperview().offset(30)
-            make.height.equalTo(84)
+//            make.height.equalTo(84)
         }
         
         subtitleLabel.snp.makeConstraints { make in

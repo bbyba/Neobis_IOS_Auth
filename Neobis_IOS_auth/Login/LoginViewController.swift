@@ -6,7 +6,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     let loginView = LoginView()
     
@@ -31,6 +31,22 @@ class ViewController: UIViewController {
     
     @objc func didTapLoginButon(){
         print("login button tapped")
+        
+//        // Check if all requirements are met before proceeding
+//        guard let username = loginView.usernameTextField.text,
+//                let password = loginView.passwordTextField.text,
+//        else {
+//            print("Invalid input. Please check your data.")
+//            return
+//        }
+//
+//        // Create a RegisterDto object with the entered data
+//        let JwtRequest = JwtRequest(username: username, password: password)
+//
+//        // Use the RegisterViewModel to handle the registration process
+//        let loginViewModel = LoginViewModel()
+//        loginViewModel.login(user: JwtRequest)
+        
         let profileVC = ProfileViewController()
         profileVC.modalPresentationStyle = .fullScreen
         present(profileVC, animated: false, completion: nil)

@@ -148,10 +148,35 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate {
 //        }
 //    }
     
+//    @objc func didTapNextButton() {
+//        print("Next button tapped")
+//        let confirmationVC = ConfirmationViewController()
+//        navigationController?.pushViewController(confirmationVC, animated: true)
+//    }
+
     @objc func didTapNextButton() {
         print("Next button tapped")
+
+        // Check if all requirements are met before proceeding
+        guard let email = registerView.emailTextField.text,
+              let firstName = registerView.usernameTextField.text,
+              let password = registerView.createPasswordTextField.text,
+              isValidPassword(password),
+              confirmPassword() else {
+            // Show an error or alert to inform the user that the requirements are not met
+            print("Invalid input. Please check your data.")
+            return
+        }
+
+        // Create a RegisterDto object with the entered data
+        let registerDto = RegisterDto(email: email, firstName: firstName, password: password)
+
+        // Use the RegisterViewModel to handle the registration process
+        let registerViewModel = RegisterViewModel()
+        registerViewModel.register(user: registerDto)
+
+        // Assuming ConfirmationViewController requires some data, pass it here
         let confirmationVC = ConfirmationViewController()
         navigationController?.pushViewController(confirmationVC, animated: true)
     }
-
 }

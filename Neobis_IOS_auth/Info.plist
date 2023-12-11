@@ -19,5 +19,15 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MPLUS1p-Thin.ttf</string>
+		<string>MPLUS1p-Black.ttf</string>
+		<string>MPLUS1p-Bold.ttf</string>
+		<string>MPLUS1p-ExtraBold.ttf</string>
+		<string>MPLUS1p-Light.ttf</string>
+		<string>MPLUS1p-Medium.ttf</string>
+		<string>MPLUS1p-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

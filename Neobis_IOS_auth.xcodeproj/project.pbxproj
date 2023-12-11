@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		38D2F261DA21313821A95B6F /* Pods_Neobis_IOS_auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AFDA46534CBE5CDFE9F7D26 /* Pods_Neobis_IOS_auth.framework */; };
+		DD8A678C2B2596E1001EB67D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8A678B2B2596E1001EB67D /* Model.swift */; };
+		DD8A678E2B25A9BD001EB67D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8A678D2B25A9BD001EB67D /* RegisterViewModel.swift */; };
+		DD8A67912B25C3D5001EB67D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8A67902B25C3D5001EB67D /* LoginViewModel.swift */; };
 		DDDCEFAA2B1BD224007CD8C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFA92B1BD224007CD8C9 /* AppDelegate.swift */; };
 		DDDCEFAC2B1BD224007CD8C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFAB2B1BD224007CD8C9 /* SceneDelegate.swift */; };
-		DDDCEFAE2B1BD224007CD8C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFAD2B1BD224007CD8C9 /* ViewController.swift */; };
+		DDDCEFAE2B1BD224007CD8C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFAD2B1BD224007CD8C9 /* LoginViewController.swift */; };
 		DDDCEFB32B1BD227007CD8C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDCEFB22B1BD227007CD8C9 /* Assets.xcassets */; };
 		DDDCEFB62B1BD227007CD8C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDCEFB42B1BD227007CD8C9 /* LaunchScreen.storyboard */; };
 		DDDCEFBF2B1BD687007CD8C9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFBE2B1BD687007CD8C9 /* CustomButton.swift */; };
@@ -33,16 +36,20 @@
 		DDDCEFEA2B21A2FA007CD8C9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFE92B21A2FA007CD8C9 /* ProfileViewController.swift */; };
 		DDDCEFEC2B21F6F5007CD8C9 /* ResendAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFEB2B21F6F5007CD8C9 /* ResendAlertView.swift */; };
 		DDDCEFEE2B22440D007CD8C9 /* ResendAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFED2B22440D007CD8C9 /* ResendAlertViewController.swift */; };
+		DDDCEFF22B248704007CD8C9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDCEFF12B248704007CD8C9 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10F4CEEBBDD66570A1675B37 /* Pods-Neobis_IOS_auth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_IOS_auth.release.xcconfig"; path = "Target Support Files/Pods-Neobis_IOS_auth/Pods-Neobis_IOS_auth.release.xcconfig"; sourceTree = "<group>"; };
 		6AFDA46534CBE5CDFE9F7D26 /* Pods_Neobis_IOS_auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neobis_IOS_auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8CD3C0628D98F8C6A997CF /* Pods-Neobis_IOS_auth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_IOS_auth.debug.xcconfig"; path = "Target Support Files/Pods-Neobis_IOS_auth/Pods-Neobis_IOS_auth.debug.xcconfig"; sourceTree = "<group>"; };
+		DD8A678B2B2596E1001EB67D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		DD8A678D2B25A9BD001EB67D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		DD8A67902B25C3D5001EB67D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DDDCEFA62B1BD224007CD8C9 /* Neobis_IOS_auth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neobis_IOS_auth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDCEFA92B1BD224007CD8C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDDCEFAB2B1BD224007CD8C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DDDCEFAD2B1BD224007CD8C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDDCEFAD2B1BD224007CD8C9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DDDCEFB22B1BD227007CD8C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDDCEFB52B1BD227007CD8C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDDCEFB72B1BD227007CD8C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +73,7 @@
 		DDDCEFE92B21A2FA007CD8C9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DDDCEFEB2B21F6F5007CD8C9 /* ResendAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResendAlertView.swift; sourceTree = "<group>"; };
 		DDDCEFED2B22440D007CD8C9 /* ResendAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResendAlertViewController.swift; sourceTree = "<group>"; };
+		DDDCEFF12B248704007CD8C9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,15 +126,15 @@
 		DDDCEFA82B1BD224007CD8C9 /* Neobis_IOS_auth */ = {
 			isa = PBXGroup;
 			children = (
+				DDDCEFB72B1BD227007CD8C9 /* Info.plist */,
+				DD8A678B2B2596E1001EB67D /* Model.swift */,
+				DDDCEFF02B2486E9007CD8C9 /* Service */,
 				DDDCEFD52B1C72AA007CD8C9 /* Login */,
 				DDDCEFE82B21A2C9007CD8C9 /* Profile */,
 				DDDCEFD62B1C72CD007CD8C9 /* Register */,
 				DDDCEFE22B20E178007CD8C9 /* Confirmation */,
-				DDDCEFDE2B1CE9C9007CD8C9 /* SplashScreenView.swift */,
+				DDDCEFEF2B224953007CD8C9 /* ResendAlert */,
 				DDDCEFDB2B1C786A007CD8C9 /* CustomStuff */,
-				DDDCEFB22B1BD227007CD8C9 /* Assets.xcassets */,
-				DDDCEFB72B1BD227007CD8C9 /* Info.plist */,
-				DDDCEFC42B1C556B007CD8C9 /* Fonts */,
 				DDDCEFBD2B1BD533007CD8C9 /* SUPPORTING */,
 			);
 			path = Neobis_IOS_auth;
@@ -135,6 +143,8 @@
 		DDDCEFBD2B1BD533007CD8C9 /* SUPPORTING */ = {
 			isa = PBXGroup;
 			children = (
+				DDDCEFC42B1C556B007CD8C9 /* Fonts */,
+				DDDCEFB22B1BD227007CD8C9 /* Assets.xcassets */,
 				DDDCEFB42B1BD227007CD8C9 /* LaunchScreen.storyboard */,
 				DDDCEFAB2B1BD224007CD8C9 /* SceneDelegate.swift */,
 				DDDCEFA92B1BD224007CD8C9 /* AppDelegate.swift */,
@@ -160,7 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				DDDCEFD32B1C56D4007CD8C9 /* LoginView.swift */,
-				DDDCEFAD2B1BD224007CD8C9 /* ViewController.swift */,
+				DDDCEFAD2B1BD224007CD8C9 /* LoginViewController.swift */,
+				DD8A67902B25C3D5001EB67D /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -170,6 +181,7 @@
 			children = (
 				DDDCEFD72B1C72E6007CD8C9 /* RegisterView.swift */,
 				DDDCEFD92B1C7300007CD8C9 /* RegisterViewController.swift */,
+				DD8A678D2B25A9BD001EB67D /* RegisterViewModel.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -180,6 +192,7 @@
 				DDDCEFC22B1C5207007CD8C9 /* CustomTextField.swift */,
 				DDDCEFDC2B1CE43B007CD8C9 /* PasswordTextField.swift */,
 				DDDCEFBE2B1BD687007CD8C9 /* CustomButton.swift */,
+				DDDCEFDE2B1CE9C9007CD8C9 /* SplashScreenView.swift */,
 			);
 			path = CustomStuff;
 			sourceTree = "<group>";
@@ -188,9 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				DDDCEFE32B20E18F007CD8C9 /* ConfirmationView.swift */,
-				DDDCEFEB2B21F6F5007CD8C9 /* ResendAlertView.swift */,
 				DDDCEFE62B20E1AA007CD8C9 /* ConfirmationViewController.swift */,
-				DDDCEFED2B22440D007CD8C9 /* ResendAlertViewController.swift */,
 			);
 			path = Confirmation;
 			sourceTree = "<group>";
@@ -202,6 +213,23 @@
 				DDDCEFE92B21A2FA007CD8C9 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		DDDCEFEF2B224953007CD8C9 /* ResendAlert */ = {
+			isa = PBXGroup;
+			children = (
+				DDDCEFEB2B21F6F5007CD8C9 /* ResendAlertView.swift */,
+				DDDCEFED2B22440D007CD8C9 /* ResendAlertViewController.swift */,
+			);
+			path = ResendAlert;
+			sourceTree = "<group>";
+		};
+		DDDCEFF02B2486E9007CD8C9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DDDCEFF12B248704007CD8C9 /* APIService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,12 +361,16 @@
 				DDDCEFEA2B21A2FA007CD8C9 /* ProfileViewController.swift in Sources */,
 				DDDCEFC32B1C5207007CD8C9 /* CustomTextField.swift in Sources */,
 				DDDCEFDA2B1C7300007CD8C9 /* RegisterViewController.swift in Sources */,
+				DD8A67912B25C3D5001EB67D /* LoginViewModel.swift in Sources */,
+				DD8A678E2B25A9BD001EB67D /* RegisterViewModel.swift in Sources */,
 				DDDCEFE12B1D874F007CD8C9 /* ProfileView.swift in Sources */,
 				DDDCEFEC2B21F6F5007CD8C9 /* ResendAlertView.swift in Sources */,
 				DDDCEFD82B1C72E6007CD8C9 /* RegisterView.swift in Sources */,
-				DDDCEFAE2B1BD224007CD8C9 /* ViewController.swift in Sources */,
+				DDDCEFF22B248704007CD8C9 /* APIService.swift in Sources */,
+				DDDCEFAE2B1BD224007CD8C9 /* LoginViewController.swift in Sources */,
 				DDDCEFDF2B1CE9C9007CD8C9 /* SplashScreenView.swift in Sources */,
 				DDDCEFAA2B1BD224007CD8C9 /* AppDelegate.swift in Sources */,
+				DD8A678C2B2596E1001EB67D /* Model.swift in Sources */,
 				DDDCEFE72B20E1AB007CD8C9 /* ConfirmationViewController.swift in Sources */,
 				DDDCEFAC2B1BD224007CD8C9 /* SceneDelegate.swift in Sources */,
 			);
