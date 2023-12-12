@@ -15,13 +15,13 @@ class ResendAlertViewController: UIViewController {
         addTargets()
     }
     
-    func setupConstraintsResendAlertView(){
+    private func setupConstraintsResendAlertView(){
         resendAlertView.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalToSuperview()
         }
     }
     
-    func addTargets(){
+    private func addTargets(){
         resendAlertView.okayButton.addTarget(self, action: #selector(didTapOkayButton), for: .touchUpInside)
     }
     

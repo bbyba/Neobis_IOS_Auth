@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		38D2F261DA21313821A95B6F /* Pods_Neobis_IOS_auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AFDA46534CBE5CDFE9F7D26 /* Pods_Neobis_IOS_auth.framework */; };
+		DD226A8B2B28E0C800790F72 /* LogoutAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD226A8A2B28E0C800790F72 /* LogoutAlertView.swift */; };
+		DD226A8D2B28E29400790F72 /* LogoutAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD226A8C2B28E29400790F72 /* LogoutAlertViewController.swift */; };
 		DD8A678C2B2596E1001EB67D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8A678B2B2596E1001EB67D /* Model.swift */; };
 		DD8A678E2B25A9BD001EB67D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8A678D2B25A9BD001EB67D /* RegisterViewModel.swift */; };
 		DD8A67912B25C3D5001EB67D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8A67902B25C3D5001EB67D /* LoginViewModel.swift */; };
@@ -43,6 +45,8 @@
 		10F4CEEBBDD66570A1675B37 /* Pods-Neobis_IOS_auth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_IOS_auth.release.xcconfig"; path = "Target Support Files/Pods-Neobis_IOS_auth/Pods-Neobis_IOS_auth.release.xcconfig"; sourceTree = "<group>"; };
 		6AFDA46534CBE5CDFE9F7D26 /* Pods_Neobis_IOS_auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neobis_IOS_auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8CD3C0628D98F8C6A997CF /* Pods-Neobis_IOS_auth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_IOS_auth.debug.xcconfig"; path = "Target Support Files/Pods-Neobis_IOS_auth/Pods-Neobis_IOS_auth.debug.xcconfig"; sourceTree = "<group>"; };
+		DD226A8A2B28E0C800790F72 /* LogoutAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertView.swift; sourceTree = "<group>"; };
+		DD226A8C2B28E29400790F72 /* LogoutAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertViewController.swift; sourceTree = "<group>"; };
 		DD8A678B2B2596E1001EB67D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DD8A678D2B25A9BD001EB67D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		DD8A67902B25C3D5001EB67D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -133,7 +137,7 @@
 				DDDCEFE82B21A2C9007CD8C9 /* Profile */,
 				DDDCEFD62B1C72CD007CD8C9 /* Register */,
 				DDDCEFE22B20E178007CD8C9 /* Confirmation */,
-				DDDCEFEF2B224953007CD8C9 /* ResendAlert */,
+				DDDCEFEF2B224953007CD8C9 /* CustomAlerts */,
 				DDDCEFDB2B1C786A007CD8C9 /* CustomStuff */,
 				DDDCEFBD2B1BD533007CD8C9 /* SUPPORTING */,
 			);
@@ -215,13 +219,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		DDDCEFEF2B224953007CD8C9 /* ResendAlert */ = {
+		DDDCEFEF2B224953007CD8C9 /* CustomAlerts */ = {
 			isa = PBXGroup;
 			children = (
 				DDDCEFEB2B21F6F5007CD8C9 /* ResendAlertView.swift */,
 				DDDCEFED2B22440D007CD8C9 /* ResendAlertViewController.swift */,
+				DD226A8A2B28E0C800790F72 /* LogoutAlertView.swift */,
+				DD226A8C2B28E29400790F72 /* LogoutAlertViewController.swift */,
 			);
-			path = ResendAlert;
+			path = CustomAlerts;
 			sourceTree = "<group>";
 		};
 		DDDCEFF02B2486E9007CD8C9 /* Service */ = {
@@ -359,11 +365,13 @@
 				DDDCEFBF2B1BD687007CD8C9 /* CustomButton.swift in Sources */,
 				DDDCEFDD2B1CE43B007CD8C9 /* PasswordTextField.swift in Sources */,
 				DDDCEFEA2B21A2FA007CD8C9 /* ProfileViewController.swift in Sources */,
+				DD226A8B2B28E0C800790F72 /* LogoutAlertView.swift in Sources */,
 				DDDCEFC32B1C5207007CD8C9 /* CustomTextField.swift in Sources */,
 				DDDCEFDA2B1C7300007CD8C9 /* RegisterViewController.swift in Sources */,
 				DD8A67912B25C3D5001EB67D /* LoginViewModel.swift in Sources */,
 				DD8A678E2B25A9BD001EB67D /* RegisterViewModel.swift in Sources */,
 				DDDCEFE12B1D874F007CD8C9 /* ProfileView.swift in Sources */,
+				DD226A8D2B28E29400790F72 /* LogoutAlertViewController.swift in Sources */,
 				DDDCEFEC2B21F6F5007CD8C9 /* ResendAlertView.swift in Sources */,
 				DDDCEFD82B1C72E6007CD8C9 /* RegisterView.swift in Sources */,
 				DDDCEFF22B248704007CD8C9 /* APIService.swift in Sources */,

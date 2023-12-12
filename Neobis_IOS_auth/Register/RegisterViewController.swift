@@ -147,18 +147,12 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate {
 //            registerView.nextButton.isEnabled = false
 //        }
 //    }
-    
-//    @objc func didTapNextButton() {
-//        print("Next button tapped")
-//        let confirmationVC = ConfirmationViewController()
-//        navigationController?.pushViewController(confirmationVC, animated: true)
-//    }
 
     @objc func didTapNextButton() {
         print("Next button tapped")
 
         guard let email = registerView.emailTextField.text,
-              let firstName = registerView.usernameTextField.text,
+              let username = registerView.usernameTextField.text,
               let password = registerView.createPasswordTextField.text,
               isValidPassword(password),
               confirmPassword() else {
@@ -166,12 +160,12 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate {
             return
         }
 
-        let registerDto = RegisterDto(email: email, firstName: firstName, password: password)
+        let registerDto = RegisterDto(email: email, username: username, password: password)
 
         let registerViewModel = RegisterViewModel()
         registerViewModel.register(user: registerDto)
 
-        let confirmationVC = ConfirmationViewController()
+        let confirmationVC = ConfirmationViewController(email: email)
         navigationController?.pushViewController(confirmationVC, animated: true)
     }
 }

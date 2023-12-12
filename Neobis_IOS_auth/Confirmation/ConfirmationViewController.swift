@@ -7,7 +7,15 @@
 import UIKit
 
 class ConfirmationViewController: UIViewController, UIGestureRecognizerDelegate {
+    
     let confirmationView = ConfirmationView()
+    let email: String
+    
+    init(email: String) {
+        self.email = email
+        super.init(nibName: nil, bundle: nil)
+        confirmationView.titleLabel.text = "Выслали письмо со ссылкой\nдля завершения регистрации\nна \(email)"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +24,10 @@ class ConfirmationViewController: UIViewController, UIGestureRecognizerDelegate 
         view.addSubview(confirmationView)
         setupConstraintsRegisterView()
         addTargets()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func setupConstraintsRegisterView(){
@@ -46,9 +58,18 @@ class ConfirmationViewController: UIViewController, UIGestureRecognizerDelegate 
 
     @objc func didTapResendButton() {
         print("resend button tapped.")
+        
+//        guard let email = registerView.emailTextField.text else {
+//            print("Invalid input. Please check your data.")
+//            return
+//        }
+        
+        let emailRequest = emailRequest(email: email)
+        let confirmationRequestViewModel = confirmationRequestViewModel()
+        confirmationRequestViewModel.confirmationRequest(email: emailRequest)
+        
         let resendAlertVC = ResendAlertViewController()
         resendAlertVC.modalPresentationStyle = .overCurrentContext
         present(resendAlertVC, animated: false, completion: nil)
     }
-
 }

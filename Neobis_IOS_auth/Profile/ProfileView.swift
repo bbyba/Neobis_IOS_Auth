@@ -16,7 +16,7 @@ class ProfileView: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Welcome Back!"
+        label.text = "Welcome!"
         label.font = UIFont(name: "MPLUS1p-Medium", size: 40)
         label.textAlignment = .center
         

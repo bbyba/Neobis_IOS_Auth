@@ -15,7 +15,7 @@ class ConfirmationView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Выслали письмо со ссылкой для завершения регистрации на "
-        label.font = UIFont(name: "MPLUS1p-Medium", size: 25)
+        label.font = UIFont(name: "MPLUS1p-Medium", size: 20)
         label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -25,9 +25,7 @@ class ConfirmationView: UIView {
     
     lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = """
-        Если письмо не пришло, не спеши \n ждать совиную почту - лучше проверь \n ящик “Спам” \n\n\n (´｡• ω •｡`)
-        """
+        label.text = "Если письмо не пришло, не спеши \n ждать совиную почту - лучше проверь \n ящик “Спам” \n\n\n (´｡• ω •｡`)"
         label.font = UIFont(name: "MPLUS1p-Regular", size: 16)
         label.textColor = .systemGray
         label.textAlignment = .center
