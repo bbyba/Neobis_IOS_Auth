@@ -8,14 +8,14 @@ import SnapKit
 
 class LoginViewController: UIViewController {
     
-    let loginView = LoginView()
+    lazy var loginView = LoginView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(loginView)
         setupConstraintsMainView()
-        setupTargets()
+        addTargets()
     }
     
     func setupConstraintsMainView(){
@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func setupTargets() {
+    func addTargets() {
         loginView.loginButton.addTarget(self, action: #selector(didTapLoginButon), for: .touchUpInside)
         loginView.registerButton.addTarget(self, action: #selector(didTapRegisterButton), for: .touchUpInside)
     }
@@ -32,21 +32,16 @@ class LoginViewController: UIViewController {
     @objc func didTapLoginButon(){
         print("login button tapped")
         
-//        // Check if all requirements are met before proceeding
-//        guard let username = loginView.usernameTextField.text,
-//                let password = loginView.passwordTextField.text,
-//        else {
-//            print("Invalid input. Please check your data.")
-//            return
-//        }
-//
-//        // Create a RegisterDto object with the entered data
-//        let JwtRequest = JwtRequest(username: username, password: password)
-//
-//        // Use the RegisterViewModel to handle the registration process
-//        let loginViewModel = LoginViewModel()
-//        loginViewModel.login(user: JwtRequest)
-        
+        guard let username = loginView.usernameTextField.text,
+              let password = loginView.passwordTextField.text
+        else {
+            print("Invalid input. Please check your data.")
+            return
+        }
+
+        let loginViewModel = LoginViewModel()
+        loginViewModel.login(username: username, password: password)
+
         let profileVC = ProfileViewController()
         profileVC.modalPresentationStyle = .fullScreen
         present(profileVC, animated: false, completion: nil)

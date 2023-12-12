@@ -17,13 +17,14 @@ class APIService {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type" )
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         
         do {
-            // encode the provided data to JSON
             let jsonData = try JSONEncoder().encode(data)
             request.httpBody = jsonData
         } catch {
+            print("Error encoding data to JSON: \(error)")
             completion(.failure(error))
             return
         }
@@ -59,24 +60,12 @@ class APIService {
                             return
                         }
                     }
-                } catch {
-                    let error = NSError(domain: "", code: statusCode, userInfo: [NSLocalizedDescriptionKey: "Failed to parse error response"])
+                } catch let serializationError {
+                    let error = NSError(domain: "", code: statusCode, userInfo: [NSLocalizedDescriptionKey: "\(serializationError.localizedDescription)"])
                     completion(.failure(error))
                 }
             }
         }
-//            if 200...299 ~= statusCode {
-//                if let data = data {
-//                    completion(.success(data))
-//                } else {
-//                    let error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Empty response data"])
-//                    completion(.failure(error))
-//                }
-//            } else {
-//                let error = NSError(domain: "", code: statusCode, userInfo: [NSLocalizedDescriptionKey: "Request failed with status code: \(statusCode)"])
-//                completion(.failure(error))
-//            }
-//        }
         task.resume()
     }
 }
